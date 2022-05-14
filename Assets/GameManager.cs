@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject pointOfReference;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(3))
+        {
+            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Debug.Log("Middle Mouse!");
+        }
     }
 }
