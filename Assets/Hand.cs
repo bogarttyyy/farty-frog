@@ -12,7 +12,10 @@ public class Hand : MonoBehaviour
     private Rigidbody2D rb;
 
     private void Start() {
-        rb = GetComponent<Rigidbody2D>();
+        if (TryGetComponent<Rigidbody2D>(out Rigidbody2D result))
+        {
+            rb = result;        
+        }
     }
 
     // Update is called once per frame
@@ -23,18 +26,27 @@ public class Hand : MonoBehaviour
         if (Input.GetKey(keyBind))
         {
             Vector2 mousePosV2 = (Vector2)mousePos;
-            rb.MovePosition(Vector2.MoveTowards(rb.position, mousePosV2, force));
 
             var distance = Vector2.Distance((Vector2)transform.position, mousePosV2);
 
-            if (distance < 0.25f)
+            if (rb != null)
             {
-                rb.bodyType = RigidbodyType2D.Kinematic;
+                if (distance < 0.25f)
+                {
+                    rb.bodyType = RigidbodyType2D.Static;
+                }
+                else
+                {
+                    rb.bodyType = RigidbodyType2D.Dynamic;
+                    rb.MovePosition(Vector2.MoveTowards(rb.position, mousePosV2, force));
+                }
             }
             else
             {
-                rb.bodyType = RigidbodyType2D.Dynamic;
+                transform.position = mousePosV2;
             }
+
+
             
             // rb.AddForce(mousePosV2, ForceMode2D.Impulse);
             // transform.position = Vector3.Lerp(transform.position, mousePos, Time.deltaTime);
@@ -42,13 +54,13 @@ public class Hand : MonoBehaviour
             // transform.position = new Vector3(mousePos.x, mousePos.y, 0);
         }
 
-        if (Input.GetKeyUp(keyBind))
-        {
-            if (rb.bodyType != RigidbodyType2D.Dynamic)
-            {
-                rb.bodyType = RigidbodyType2D.Dynamic;                    
-            }
-        }
+        // if (Input.GetKeyUp(keyBind))
+        // {
+        //     if (rb.bodyType != RigidbodyType2D.Dynamic)
+        //     {
+        //         rb.bodyType = RigidbodyType2D.Dynamic;                    
+        //     }
+        // }
                 
     }
 }
