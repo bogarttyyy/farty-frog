@@ -179,7 +179,7 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -150
+    m_LowerAngle: -170
     m_UpperAngle: 0
 --- !u!50 &66010312
 Rigidbody2D:
@@ -209,7 +209,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 66010309}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -695,7 +695,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152072953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07, y: -8.8, z: 0}
+  m_LocalPosition: {x: -0.07, y: -9.32, z: 0}
   m_LocalScale: {x: 13.525, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1726,7 +1726,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676220231}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1852,7 +1852,7 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: 150
+    m_LowerAngle: 170
     m_UpperAngle: 0
 --- !u!50 &703871143
 Rigidbody2D:
@@ -1882,7 +1882,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703871140}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -2404,7 +2404,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 806097246}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -2905,7 +2905,7 @@ MonoBehaviour:
   keyBind: 113
   torso: {fileID: 470519881}
   handChargeLocation: {x: -1.8, y: 2}
-  force: 2500
+  force: 75
 --- !u!1 &1055469159
 GameObject:
   m_ObjectHideFlags: 0
@@ -4221,13 +4221,15 @@ GameObject:
   - component: {fileID: 1540699141}
   - component: {fileID: 1540699143}
   - component: {fileID: 1540699142}
+  - component: {fileID: 1540699144}
+  - component: {fileID: 1540699145}
   m_Layer: 0
   m_Name: TestCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1540699141
 Transform:
   m_ObjectHideFlags: 0
@@ -4236,7 +4238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1540699140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0, z: 0}
+  m_LocalPosition: {x: 0.04, y: -4.97, z: 0}
   m_LocalScale: {x: 0.4528, y: 0.4528, z: 0.4528}
   m_Children: []
   m_Father: {fileID: 1705381396}
@@ -4309,6 +4311,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1540699144
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540699140}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &1540699145
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540699140}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1572570462
 GameObject:
   m_ObjectHideFlags: 0
@@ -5779,7 +5818,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129941609}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8, y: 2, z: 0}
+  m_LocalPosition: {x: 3.635, y: 0.991, z: 0}
   m_LocalScale: {x: 0.4265, y: 0.4265, z: 0.4265}
   m_Children: []
   m_Father: {fileID: 470519881}
@@ -5912,7 +5951,7 @@ MonoBehaviour:
   keyBind: 101
   torso: {fileID: 470519881}
   handChargeLocation: {x: 1.8, y: 2}
-  force: 2500
+  force: 75
 --- !u!1 &2131605370
 GameObject:
   m_ObjectHideFlags: 0
